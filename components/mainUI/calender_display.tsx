@@ -16,9 +16,9 @@ export default function Calendermain() {
     const [selected, setSelected] = useState<Date | undefined>(undefined);
     const [isOpen, setIsOpen] = useState(false);
 
-    const handleSelect = (newDate: Date) => {
-        setDate(newDate);
-        setSelected(newDate);
+    const handleSelect = (day: Date) => {
+        setDate(day);
+        setSelected(day);
         setIsOpen(true);
     };
 
@@ -28,7 +28,7 @@ export default function Calendermain() {
             <Calendar
                 mode="single"
                 selected={date}
-                onSelect={handleSelect}
+                onDayClick={handleSelect}
                 className="rounded-md border w-fit text-white"
             />
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
