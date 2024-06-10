@@ -8,7 +8,7 @@ export default function Siteheader() {
         <img src="/images/osvaldy-pic-1.png" alt="osvaldy picture in front of Yankee Stadium" className="z-50 rounded-2xl w-[250px] md:w-40 md:h-40 md:absolute md:top-[100px] md:left-[500px] md:w-[250px] lg:h-[450px]" />
         <div className="left-[35px] top-[375px] w-[250px] h-[400px] absolute md:h-[430px] md:w-[250px] md:top-[150px] md:left-[470px] z-10 rounded-xl bg-yellow-300" />
       </div>
-      <img src="/images/logo-4.png" alt="osvaldy the barber logo" className="w-[30em] absolute top-[650px] lg:top-[77px] md:left-[650px] lg:w-[600px] lg:h-[500px]" />
+      <img src="/images/logo-4.png" alt="osvaldy the barber logo" className="w-[30em] absolute top-[650px] md:top-[7px] md:left-[650px] lg:w-[800px] lg:h-[800px]" />
     </div>
   )
 }
