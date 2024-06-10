@@ -41,8 +41,7 @@ export default function Calendermain() {
                         Contents for {selected?.toLocaleDateString()} here.
                     </DialogDescription>
                     <DialogClose asChild>
-                        <button className="absolute right-4 top-4 rounded-sm opacity-70 hover:opacity-100 focus:ring-2 focus:ring-blue-500">
-                            Close
+                        <button className="absolute right-4 top-4 rounded-sm opacity-70 hover:opacity-100">
                         </button>
                     </DialogClose>
                 </DialogContent>

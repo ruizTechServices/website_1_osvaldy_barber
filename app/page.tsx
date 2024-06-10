@@ -11,8 +11,9 @@ export default function Home() {
       <Siteheader />
       <Aboutsection />
       <Carouselcompletefrontend />
-      <Ctaindex />
+      <Ctaindex title="On-demand Haircuts Based on Availabilty" />
       <Calendermain />
+      <Ctaindex title="Haircuts and Beauty Services" />
     </>
 
   );
