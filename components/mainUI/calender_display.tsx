@@ -26,7 +26,7 @@ export default function CalendarMain() {
 
     const fetchAppointments = async (selectedDate: Date) => {
         const { data, error } = await supabase
-            .from<Appointment>('appointments')
+            .from('appointments')
             .select('*')
             .eq('appointment_date', selectedDate.toISOString().slice(0, 10)); // Assuming 'appointment_date' is stored as a date
 
