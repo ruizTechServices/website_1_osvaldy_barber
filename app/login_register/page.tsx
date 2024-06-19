@@ -11,11 +11,13 @@ const LoginRegister: React.FC = () => {
         <div className="flex justify-center flex-col md:flex-row items-center h-screen bg-black">
             <BurgerNavbar />
             <div className="w-fit h-fit text-2xl font-bold flex flex-col justify-center items-center">
-            <img className="absolute top-0 left-0 md:top-20 md:left-0 w-[150px] md:w-[100px] md:relative" src="/images/logo-1.png" alt="Logo" />
+                <img className="absolute top-0 left-0 md:bottom-0 md:left-0 w-[150px] md:w-[100px] md:relative" src="/images/logo-1.png" alt="Logo" />
                 <img className=" absolute top-0 left-32 md:left-0 w-[150px] md:w-[500px] md:relative" src="/images/logo-transparent.png" alt="Logo" />
-                <img className=' absolute top-5 rounded-xl opacity-25 w-[600px] md:w-[500px] h-[500px]' src="/images/IMG_2378.png" alt="osvaldy sitting" />
+                <img className=' absolute top-5 rounded-xl opacity-25 w-[600px] md:w-[600px] h-[600px]' src="/images/IMG_2378.png" alt="osvaldy sitting" />
             </div>
-            {isLogin ? <Login /> : <Register />}
+            <div className='md:ml-10'>
+                {isLogin ? <Login /> : <Register />}
+            </div>
             <div className="absolute bottom-8">
                 <button
                     onClick={() => setIsLogin(!isLogin)}
