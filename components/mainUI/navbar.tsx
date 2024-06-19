@@ -42,9 +42,9 @@ const BurgerNavbar = () => {
         <Link href="#" className="mb-4 text-xl">Prices</Link>
         <Link href="#" className="mb-4 text-xl">Gallery</Link>
         <Link href="/login_register" className="mb-4 text-xl">login/register</Link>
-        <div className="absolute bottom-4">
-          <div className="w-fit h-[200px] text-2xl font-bold">
-            <img src="/images/logo-4.png" alt="Logo" />
+        <div className="">
+          <div className="w-[250px] text-2xl font-bold">
+            <img src="/images/logo-transparent.png" alt="Logo" />
           </div>
         </div>
       </div>

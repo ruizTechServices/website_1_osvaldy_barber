@@ -66,7 +66,7 @@ export default function SiteHeader() {
       <img
         src="/images/logo-4.png"
         alt="osvaldy the barber logo"
-        className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-[30em] absolute top-[650px] md:top-[7px] md:left-[580px] lg:w-[800px] lg:h-[800px]"
+        className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-[30em] absolute top-[650px] md:top-[7px] md:left-[780px] lg:w-[500px] lg:h-[500px]"
       />
     </div>
   );
