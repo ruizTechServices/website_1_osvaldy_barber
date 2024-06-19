@@ -1,38 +1,52 @@
-import React from 'react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+'use client';
+import React, { useState } from 'react';
 
-export default function Carouselmain() {
+const images = [
+  "/images/1.png",
+  "/images/3.png",
+  "/images/4.png",
+  "/images/5.png",
+  "/images/6.png",
+  "/images/7.png",
+  "/images/8.png",
+  "/images/9.png",
+  "/images/10.png",
+  "/images/11.png",
+  "/images/12.png",
+  "/images/13.png",
+  "/images/haircut-1.png",
+  "/images/haircut-2.png",
+  "/images/IMG_2378.png",
+  "/images/IMG_5873.jpg",
+  "/images/IMG_8598.jpg",
+  "/images/IMG_8711.jpg",
+  "/images/IMG_8718.jpg",
+  "/images/IMG_9997.jpg",
+];
+
+
+const Carousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+  };
+
   return (
-    <Carousel className='w-full flex flex-col items-center justify-center'>
-      <CarouselContent className='w-full'>
-        <CarouselItem className='flex justify-center items-center overflow-hidden'>
-          <div className="flex flex-col items-center justify-center bg-black">
-            {/* Responsive image width */}
-            <img className='w-full max-w-[600px]' src="/images/osvaldy-pic-2.png" />
-          </div>
-        </CarouselItem>
-        <CarouselItem className='flex justify-center items-center'>
-          <div className="flex flex-col items-center justify-center bg-black">
-            {/* Responsive image width */}
-            <img className='w-full max-w-[300px]' src="/images/logo-2.png" />
-          </div>
-        </CarouselItem>
-        <CarouselItem className='flex justify-center items-center'>
-          <div className="flex flex-col items-center justify-center bg-black">
-            {/* Responsive image width */}
-            <img className='w-full max-w-[300px]' src="/images/logo-3.png" />
-          </div>
-        </CarouselItem>
-      </CarouselContent>
-      {/* Ensure buttons are visible and usable on mobile */}
-      <CarouselPrevious className='absolute left-0 z-10 p-2 bg-white bg-opacity-75 rounded-full shadow-md' />
-      <CarouselNext className='absolute right-0 z-10 p-2 bg-white bg-opacity-75 rounded-full shadow-md' />
-    </Carousel>
+    <div className="h-[600px] w-full flex flex-col items-center justify-center relative overflow-hidden bg-[url('/images/backgroundbarber.png')]">
+      <div className="w-[600px] flex justify-center items-center overflow-hidden bg-black">
+        <img className="h-[500px] max-w-[600px]" src={images[currentIndex]} alt="Carousel item" />
+      </div>
+      <div className='flex justify-between items-center w-[600px]'>
+        <button onClick={prevSlide} className="left-4 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-white font-bold text-3xl p-2 rounded-full">{'<'}</button>
+        <button onClick={nextSlide} className="right-4 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-white font-bold text-3xl p-2 rounded-full">{'>'}</button>
+      </div>
+    </div>
   );
-}
+};
+
+export default Carousel;
