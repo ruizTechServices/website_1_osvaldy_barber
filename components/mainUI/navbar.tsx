@@ -1,5 +1,6 @@
 // C:\Users\Gio\OneDrive\Desktop\ruizTechServices\osvaldy_barber\websites\nextjs\website_1_osvaldy_barber\components\mainUI\navbar.tsx
 "use client";
+import Link from 'next/link';
 import { useState } from 'react';
 
 const BurgerNavbar = () => {
@@ -37,12 +38,12 @@ const BurgerNavbar = () => {
       <div
         className={`fixed top-0 left-0 w-[300px] h-screen bg-gray-800 text-white flex flex-col justify-center items-center z-50 overflow-hidden transition-transform duration-300 ${isOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`}
       >
-        <a href="/" className="mb-4 text-xl">Home</a>
-        <a href="#" className="mb-4 text-xl">Prices</a>
-        <a href="#" className="mb-4 text-xl">Gallery</a>
-        <a href="#" className="mb-4 text-xl">Login/Register</a>
+        <Link href="/" className="mb-4 text-xl">Home</Link>
+        <Link href="#" className="mb-4 text-xl">Prices</Link>
+        <Link href="#" className="mb-4 text-xl">Gallery</Link>
+        <Link href="/login_register" className="mb-4 text-xl">login/register</Link>
         <div className="absolute bottom-4">
-          <div className="text-2xl font-bold">
+          <div className="w-fit h-[200px] text-2xl font-bold">
             <img src="/images/logo-4.png" alt="Logo" />
           </div>
         </div>
