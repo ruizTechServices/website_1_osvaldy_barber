@@ -44,21 +44,17 @@ To get a local copy of this project up and running, follow these steps:
    git clone https://github.com/yourusername/website_1_osvaldy_barber.git
 2. Navigate to the project directory:
    ```bash
-   Copy code
    cd website_1_osvaldy_barber
 3. Install dependencies:
    ```bash
-   Copy code
    npm install
 4. Create a .env file and add your environment variables:
    ```env
-   Copy code
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
    GPT4_API_KEY=your_gpt4_api_key
 5. Run the development server:
    ```bash
-   Copy code
    npm run dev
 6. Open http://localhost:3000 to view it in the browser.
 
