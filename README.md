@@ -74,5 +74,5 @@ Contributions are welcome! If you have any suggestions or improvements, please c
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ## Contact
-For any inquiries, please contact Luis Giovanni Ruiz at luis.ruiz@osvaldybarber.com.
+For any inquiries, please contact Luis Giovanni Ruiz at ruiztechservices@gmail.com .
 
