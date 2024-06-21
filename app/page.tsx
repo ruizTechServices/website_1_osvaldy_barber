@@ -9,11 +9,11 @@ export default function Home() {
   return (
     <>
       <Siteheader />
+      <Ctaindex title="Haircuts and Beauty Services" />
       <Aboutsection />
       <Carouselcompletefrontend />
       <Ctaindex title="On-demand Haircuts Based on Availabilty" />
       <Calendermain />
-      <Ctaindex title="Haircuts and Beauty Services" />
       <div className="flex flex-col items-center justify-center gap-10 mt-10 bg-black text-white h-[500px]">
         <h1 className="text-6xl">Call today to book an appointment!</h1>
         <p className="text-2xl">(347)347-3477</p>

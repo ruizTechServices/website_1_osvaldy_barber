@@ -23,7 +23,7 @@ export default function SiteHeader() {
   );
 
   return (
-    <div className="bg-black h-[1000px] lg:h-[800px] relative overflow-hidden">
+    <div className="bg-black h-[1000px] lg:h-[800px] relative overflow-hidden md:mx-25">
       <img
         src="/images/logo-1.png"
         alt="main-logo"
