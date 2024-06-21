@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
 import Image from "next/image"
+import { JSX, SVGProps } from "react"
 
 export default function Dashboard() {
   return (
@@ -278,7 +279,7 @@ export default function Dashboard() {
   )
 }
 
-function HomeIcon(props) {
+function HomeIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
