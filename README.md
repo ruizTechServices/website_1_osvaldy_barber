@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# website_1_osvaldy_barber
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-14.2.3-blue)
+![ShadCN/ui](https://img.shields.io/badge/ShadCN/ui-1.0-green)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-orange)
+![Supabase](https://img.shields.io/badge/Supabase-1.0-yellow)
+![GPT-4 API](https://img.shields.io/badge/GPT--4%20API-integrated-red)
 
-First, run the development server:
+Welcome to the repository for the website [osvaldybarber.com](https://osvaldybarber.com), created using Next.js, ShadCN/ui, TailwindCSS, Supabase, and the GPT-4 API.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This repository hosts the source code for the official website of Osvaldy Barber. The website is built using the following technologies:
 
-## Learn More
+- **Next.js**: A React framework for production.
+- **ShadCN/ui**: A design system for building modern web applications.
+- **TailwindCSS**: A utility-first CSS framework for rapid UI development.
+- **Supabase**: An open-source Firebase alternative.
+- **GPT-4 API**: An advanced language model by OpenAI.
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Responsive design with ShadCN/ui and TailwindCSS.
+- Server-side rendering and static site generation with Next.js.
+- User authentication and database management with Supabase.
+- Enhanced user experience with GPT-4 API integration.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Installation
 
-## Deploy on Vercel
+To get a local copy of this project up and running, follow these steps:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/website_1_osvaldy_barber.git
+2. Navigate to the project directory:
+   ```bash
+   cd website_1_osvaldy_barber
+3. Install dependencies:
+   ```bash
+   npm install
+4. Create a .env file and add your environment variables:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   GPT4_API_KEY=your_gpt4_api_key
+5. Run the development server:
+   ```bash
+   npm run dev
+6. Open http://localhost:3000 to view it in the browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Usage
+
+Once the development server is running, you can explore the various features of the website. The source code is organized as follows:
+
+--**pages/**: Contains the Next.js page components.
+--**components/**: Contains the reusable UI components.
+--**styles/**: Contains the TailwindCSS styles.
+--**lib/**: Contains the utility functions and API integrations.
+
+## Contributing
+Contributions are welcome! If you have any suggestions or improvements, please create a pull request or open an issue.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+## Contact
+For any inquiries, please contact Luis Giovanni Ruiz at ruiztechservices@gmail.com .
+
