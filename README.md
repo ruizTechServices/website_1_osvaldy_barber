@@ -1,4 +1,4 @@
-# website_1_osvaldy_barber
+# website_1_osvaldy_barber The Barber
 
 ![Next.js](https://img.shields.io/badge/Next.js-14.2.3-blue)
 ![ShadCN/ui](https://img.shields.io/badge/ShadCN/ui-1.0-green)
