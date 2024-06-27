@@ -34,7 +34,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="h-[600px] w-full flex flex-col items-center justify-center relative overflow-hidden bg-[url('/images/backgroundbarber.png')]">
+    <div className="h-[600px] w-full flex flex-col items-center justify-center relative overflow-hidden">
       <div className="md:w-[600px] flex justify-center items-center overflow-hidden">
         <img className="max-h-[300px] md:max-h-[500px] md:max-w-[500px] max-w-[300px]" src={images[currentIndex]} alt="Carousel item" />
       </div>
