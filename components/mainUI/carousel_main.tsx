@@ -1,5 +1,8 @@
 'use client';
 import React, { useState } from 'react';
+import { IonIcon } from '@ionic/react';
+import { arrowForwardOutline, arrowBackOutline } from 'ionicons/icons';
+
 
 const images = [
   "/images/1.png",
@@ -39,8 +42,8 @@ const Carousel = () => {
         <img className="max-h-[300px] md:max-h-[500px] md:max-w-[500px] max-w-[300px]" src={images[currentIndex]} alt="Carousel item" />
       </div>
       <div className='flex justify-between items-center md:w-[600px] md:absolute'>
-        <button onClick={prevSlide} className="md:h-[200px] left-4 top-0 transform -translate-y-1/2 bg-yellow-400 text-white font-bold text-3xl p-2 rounded-full">{'<'}</button>
-        <button onClick={nextSlide} className="md:h-[200px] right-4 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-white font-bold text-3xl p-2 rounded-full">{'>'}</button>
+        <button onClick={prevSlide} className="md:h-[200px] left-4 top-0 transform -translate-y-1/2 bg-yellow-400 text-white font-bold text-3xl p-2 rounded-full"><IonIcon icon={arrowBackOutline}/></button>
+        <button onClick={nextSlide} className="md:h-[200px] right-4 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-white font-bold text-3xl p-2 rounded-full"><IonIcon icon={arrowForwardOutline} /></button>
       </div>
     </div>
   );
