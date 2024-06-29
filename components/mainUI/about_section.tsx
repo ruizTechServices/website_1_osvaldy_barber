@@ -12,7 +12,7 @@ export default function Aboutsection() {
             <br/>
             He has been in the hair
             <br/>
-            industry for over 20 years.
+            industry for over 10 years.
         </p>
     </div>
   )

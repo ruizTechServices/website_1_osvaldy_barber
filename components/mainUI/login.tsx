@@ -1,3 +1,4 @@
+//components/mainUI/login.tsx
 'use client';
 import React, { useState } from 'react';
 
@@ -22,7 +23,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="w-full max-w-md p-8 bg-white shadow-md rounded">
-      <h2 className="text-2xl font-bold mb-6">Login</h2>
+      <h2 className="text-2xl font-bold mb-6 hover:text-red-300">Login</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">

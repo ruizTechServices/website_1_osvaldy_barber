@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@builder.io/micro-agent": "^0.1.4",
     "@hookform/resolvers": "^3.4.2",
     "@ionic/react": "^8.2.3",
     "@radix-ui/react-accordion": "^1.1.2",
