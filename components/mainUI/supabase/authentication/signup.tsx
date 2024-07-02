@@ -26,7 +26,12 @@ const Signup = () => {
   });
 
   const signUpUser: SubmitHandler<SignupFormValues> = async ({ email, password }) => {
-    const { user, error } = await supabase.auth.signUp({ email, password });
+
+    let { data, error } = await supabase.auth.signUp({
+      email,
+      password
+    })
+
     if (error) {
       setMessage(`Error: ${error.message}`);
     } else {
