@@ -27,7 +27,7 @@ const Login = () => {
 
   const loginUser: SubmitHandler<LoginFormValues> = async ({ email, password }) => {
 
-    let { user, error } = await supabase.auth.signInWithPassword({
+    let { data, error } = await supabase.auth.signInWithPassword({
       email,
       password
     })
