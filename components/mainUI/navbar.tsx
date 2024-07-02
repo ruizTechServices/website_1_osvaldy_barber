@@ -11,7 +11,7 @@ const BurgerNavbar = () => {
   };
 
   return (
-    <nav className="w-fit text-white absolute top-10  left-[300px] md:top-0 md:left-[1200px] z-10">
+    <nav className="w-fit text-white absolute top-10  left-[300px] md:top-0 md:left-[1200px] z-20">
       <div className="flex justify-between items-center p-4">
         <div>
           <button

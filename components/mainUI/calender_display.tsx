@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase/client'; // Adjust the path as necessary
 import { Calendar } from "@/components/ui/calendar";
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, DialogClose } from "@/components/ui/dialog";
+import Link from 'next/link';
 
 interface Appointment {
   start_time: string;
@@ -57,7 +58,7 @@ export default function CalendarMain() {
                                 <p>
                                     {appt.notes
                                         ? `Not available - ${appt.notes}`
-                                        : <button className='rounded-xl bg-yellow-300 p-2'>Make an appointment</button>}{/*<==Reroute this to `create an appointment` page*/}
+                                        : <button className='rounded-xl bg-yellow-300 p-2'><Link href={'/appointments'}>Make an appointment</Link></button>}{/*<==Reroute this to `create an appointment` page*/}
                                 </p>
                             </div>
                         ))}
