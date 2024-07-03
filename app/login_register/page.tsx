@@ -22,7 +22,7 @@ const LoginRegister: React.FC = () => {
             <div className="z-10 md:absolute bottom-8">
                 <button
                     onClick={() => setIsLogin(!isLogin)}
-                    className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+                    className="inline-block align-baseline font-bold text-sm text-white hover:text-blue-500"
                 >
                     {isLogin ? 'Need an account? Register' : 'Have an account? Login'}
                 </button>

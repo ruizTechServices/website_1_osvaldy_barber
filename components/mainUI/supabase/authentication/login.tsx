@@ -47,7 +47,7 @@ const Login = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className='text-white'>Email</FormLabel>
               <FormControl>
                 <Input placeholder="Email" {...field} />
               </FormControl>
@@ -60,7 +60,7 @@ const Login = () => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel className='text-white'>Password</FormLabel>
               <FormControl>
                 <Input type="password" placeholder="Password" {...field} />
               </FormControl>
@@ -68,11 +68,14 @@ const Login = () => {
             </FormItem>
           )}
         />
-        <Button className='my-5' type="submit">Log In</Button>
-        <p>{message}</p>
+        <Button className='my-5 bg-blue-800' type="submit">Log In</Button>
+        <p className='text-white'>{message}</p>
       </form>
     </Form>
   );
 };
 
 export default Login;
+
+
+///create a prop that takes in an href to reroute to after the user logs in

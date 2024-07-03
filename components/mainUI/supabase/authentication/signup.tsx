@@ -47,7 +47,7 @@ const Signup = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className='text-white'>Email</FormLabel>
               <FormControl>
                 <Input placeholder="Email" {...field} />
               </FormControl>
@@ -60,7 +60,7 @@ const Signup = () => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel className='text-white'>Password</FormLabel>
               <FormControl>
                 <Input type="password" placeholder="Password" {...field} />
               </FormControl>
@@ -68,11 +68,12 @@ const Signup = () => {
             </FormItem>
           )}
         />
-        <Button className='my-5' type="submit">Sign Up</Button>
-        <p>{message}</p>
+        <Button className='my-5 bg-blue-800' type="submit">Sign Up</Button>
+        <p className='text-white'>{message}</p>
       </form>
     </Form>
   );
 };
 
 export default Signup;
+//this requires another input field for confirming the password
