@@ -6,9 +6,23 @@ import BurgerNavbar from './navbar';
 
 export default function SiteHeader() {
   const [images, setImages] = useState([
-    { src: "/images/IMG_9997.jpg", width: 400, height: 400 },
+    { src: "/images/1.png", width: 400, height: 400 },
+    { src: "/images/3.png", width: 400, height: 400 },
+    { src: "/images/4.png", width: 400, height: 400 },
+    { src: "/images/5.png", width: 400, height: 400 },
+    { src: "/images/6.png", width: 400, height: 400 },
+    { src: "/images/7.png", width: 400, height: 400 },
+    { src: "/images/8.png", width: 400, height: 400 },
+    { src: "/images/10.png", width: 400, height: 400 },
+    { src: "/images/11.png", width: 400, height: 400 },
+    { src: "/images/12.png", width: 400, height: 400 },
+    { src: "/images/13.png", width: 400, height: 400 },
+    { src: "/images/IMG_2378.png", width: 400, height: 400 },
+    { src: "/images/IMG_5873.jpg", width: 400, height: 400 },
+    { src: "/images/IMG_8598.jpg", width: 400, height: 400 },
+    { src: "/images/IMG_8711.jpg", width: 400, height: 400 },
     { src: "/images/IMG_8718.jpg", width: 400, height: 400 },
-    { src: "/images/IMG_8598.jpg", width: 400, height: 400 }
+    { src: "/images/IMG_9997.jpg", width: 400, height: 400 },
   ]);
   const [currentIndex, setCurrentIndex] = useState(0);
 

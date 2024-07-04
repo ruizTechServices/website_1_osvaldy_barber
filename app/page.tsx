@@ -1,8 +1,8 @@
 import Siteheader from "@/components/mainUI/site_header";
 import Aboutsection from "@/components/mainUI/about_section";
-import Carouselcompletefrontend from "@/components/mainUI/carousel_complete_frontend";
 import Ctaindex from "@/components/mainUI/cta_index";
 import Calendermain from "@/components/mainUI/calender_display";
+import NewCarousel from "@/components/mainUI/newCarousel";
 
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       <Siteheader />
       <Ctaindex title="Haircuts and Beauty Services" />
       <Aboutsection />
-      <Carouselcompletefrontend />
+      <NewCarousel /> 
       <Ctaindex title="On-demand Haircuts Based on Availabilty" />
       <Calendermain />
       <div className="container flex justify-center items-center w-full">

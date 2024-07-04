@@ -4,7 +4,7 @@ import { IonIcon } from '@ionic/react';
 import { arrowForwardOutline, arrowBackOutline } from 'ionicons/icons';
 
 
-const images = [
+const carouselImages = [
   "/images/1.png",
   "/images/3.png",
   "/images/4.png",
@@ -29,17 +29,17 @@ const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? carouselImages.length - 1 : prevIndex - 1));
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+    setCurrentIndex((prevIndex) => (prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1));
   };
 
   return (
-    <div className="h-[600px] w-full flex flex-col items-center justify-center relative overflow-hidden">
+    <div className="h-[500px] w-full flex flex-col items-center justify-center relative overflow-hidden">
       <div className="md:w-[600px] flex justify-center items-center overflow-hidden">
-        <img className="max-h-[300px] md:max-h-[500px] md:max-w-[500px] max-w-[300px]" src={images[currentIndex]} alt="Carousel item" />
+        <img className="max-h-[300px] md:max-h-[500px] md:max-w-[500px] max-w-[300px]" src={carouselImages[currentIndex]} alt="Carousel item" />
       </div>
       <div className='flex justify-between items-center md:w-[600px] md:absolute'>
         <button onClick={prevSlide} className="md:h-[200px] left-4 top-0 transform -translate-y-1/2 bg-yellow-400 text-white font-bold text-3xl p-2 rounded-full"><IonIcon icon={arrowBackOutline}/></button>
