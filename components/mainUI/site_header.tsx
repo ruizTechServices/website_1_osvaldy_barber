@@ -37,7 +37,7 @@ export default function SiteHeader() {
   );
 
   return (
-    <div className="border-2 border-white bg-black h-[1000px] w-full lg:h-[800px] relative overflow-hidden md:mx-25">
+    <div className="bg-black h-[1000px] w-full lg:h-[800px] relative overflow-hidden md:mx-25">
       {/* Replace img tags with Image component */}
       <div className="w-[200px] md:w-[15em] md:absolute md:top-[67px] md:left-[57px] md:w-[300px] md:h-[300px]">
         <Image
