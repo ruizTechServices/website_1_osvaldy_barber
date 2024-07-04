@@ -36,39 +36,48 @@ const NewCarousel = () => {
   };
 
   return (
-    <div className="border-top-2 flex items-center justify-center h-[500px] bg-black">
-      <div className="relative w-80" style={{ perspective: '1000px' }}>
+    <div className="flex items-center justify-center w-full h-60 md:h-[500px] bg-black">
+      {/* Container with perspective to enable 3D effects */}
+      <div className="relative w-full max-w-[800px]" style={{ perspective: '1000px' }}>
+        {/* Inner container with 3D transform based on current index */}
         <div
-          className="relative w-full h-52"
+          className="relative w-full h-full"
           style={{
             transformStyle: 'preserve-3d',
             transform: `rotateY(${angle}deg)`,
             transition: 'transform 1s',
           }}
         >
+          {/* Map through the carouselImages array to create each image element */}
           {carouselImages.map((src, index) => (
             <div
               key={index}
-              className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-2xl"
+              className={`absolute top-0 left-0 w-full h-full flex items-center justify-center
+                ${index !== currentIndex ? 'hidden md:flex' : 'flex'}`}
               style={{
                 transform: `rotateY(${index * 72}deg) translateZ(300px)`,
                 backfaceVisibility: 'hidden',
               }}
             >
-              {/* Replace <img> with <Image> */}
-              <Image src={src} alt={`Image ${index + 1}`} layout="fill" objectFit="cover" />
+              {/* Container for each image with responsive sizing */}
+              <div className="relative w-[200px] h-[200px] md:w-[300px] md:h-[300px]">
+                <Image src={src} alt={`Image ${index + 1}`} layout="fill" objectFit="cover" />
+              </div>
             </div>
           ))}
         </div>
+        {/* Navigation buttons positioned at the bottom */}
         <div className="absolute bottom-5 w-full flex justify-between px-10">
+          {/* Left navigation button */}
           <button
-            className="bg-gray-400 rounded-full w-8 h-8 flex items-center justify-center"
+            className="bg-yellow-500 rounded-full w-8 h-8 flex items-center justify-center"
             onClick={handleLeftClick}
           >
             &#8592;
           </button>
+          {/* Right navigation button */}
           <button
-            className="bg-gray-400 rounded-full w-8 h-8 flex items-center justify-center"
+            className="bg-yellow-500 rounded-full w-8 h-8 flex items-center justify-center"
             onClick={handleRightClick}
           >
             &#8594;
