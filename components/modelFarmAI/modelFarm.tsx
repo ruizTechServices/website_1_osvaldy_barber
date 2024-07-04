@@ -1,4 +1,4 @@
-qimport * as replitai from '@replit/ai-modelfarm';
+import * as replitai from '@replit/ai-modelfarm';
 
 const result = await replitai.chat({
   model: 'chat-bison',

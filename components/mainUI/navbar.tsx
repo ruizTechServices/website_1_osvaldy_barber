@@ -1,6 +1,6 @@
-// C:\Users\Gio\OneDrive\Desktop\ruizTechServices\osvaldy_barber\websites\nextjs\website_1_osvaldy_barber\components\mainUI\navbar.tsx
 "use client";
 import Link from 'next/link';
+import Image from 'next/image'; // Import the Image component
 import { useState } from 'react';
 
 const BurgerNavbar = () => {
@@ -11,7 +11,7 @@ const BurgerNavbar = () => {
   };
 
   return (
-    <nav className="w-fit text-white absolute top-10  left-[300px] md:top-0 md:left-[1200px] z-20">
+    <nav className="w-fit text-white absolute top-10 left-[300px] md:top-0 md:left-[1200px] z-20">
       <div className="flex justify-between items-center p-4">
         <div>
           <button
@@ -44,7 +44,7 @@ const BurgerNavbar = () => {
         <Link href="/login_register" className="mb-4 text-xl">login/register</Link>
         <div className="">
           <div className="w-[250px] text-2xl font-bold">
-            <img src="/images/logo-transparent.png" alt="Logo" />
+            <Image src="/images/logo-transparent.png" alt="Logo" width={250} height={100} layout="responsive" />
           </div>
         </div>
       </div>

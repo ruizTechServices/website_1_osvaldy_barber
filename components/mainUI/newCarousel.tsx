@@ -1,27 +1,28 @@
 'use client';
 import React, { useState } from 'react';
+import Image from 'next/image'; // Import the Image component from Next.js
 
 const NewCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const carouselImages = [
     "/images/1.png",
-      "/images/3.png",
-      "/images/4.png",
-      "/images/5.png",
-      "/images/6.png",
-      "/images/7.png",
-      "/images/8.png",
-      "/images/10.png",
-      "/images/11.png",
-      "/images/12.png",
-      "/images/13.png",
-      "/images/IMG_2378.png",
-      "/images/IMG_5873.jpg",
-      "/images/IMG_8598.jpg",
-      "/images/IMG_8711.jpg",
-      "/images/IMG_8718.jpg",
-      "/images/IMG_9997.jpg",
+    "/images/3.png",
+    "/images/4.png",
+    "/images/5.png",
+    "/images/6.png",
+    "/images/7.png",
+    "/images/8.png",
+    "/images/10.png",
+    "/images/11.png",
+    "/images/12.png",
+    "/images/13.png",
+    "/images/IMG_2378.png",
+    "/images/IMG_5873.jpg",
+    "/images/IMG_8598.jpg",
+    "/images/IMG_8711.jpg",
+    "/images/IMG_8718.jpg",
+    "/images/IMG_9997.jpg",
   ];
 
   const angle = currentIndex * -72;
@@ -54,7 +55,8 @@ const NewCarousel = () => {
                 backfaceVisibility: 'hidden',
               }}
             >
-              <img src={src} alt={`Image ${index + 1}`} className="w-full h-full object-cover" />
+              {/* Replace <img> with <Image> */}
+              <Image src={src} alt={`Image ${index + 1}`} layout="fill" objectFit="cover" />
             </div>
           ))}
         </div>
