@@ -32,7 +32,6 @@ import {
 } from "@/components/ui/table";
 import Image from "next/image";
 import { JSX, SVGProps } from "react";
-import Image from "next/image";
 
 export default function Dashboard() {
   return (
