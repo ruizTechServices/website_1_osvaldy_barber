@@ -37,7 +37,7 @@ export default function SiteHeader() {
   );
 
   return (
-    <div className="bg-black h-[1000px] w-full lg:h-[800px] relative overflow-hidden md:mx-25">
+    <div className="border-2 border-white bg-black h-[1000px] w-full lg:h-[800px] relative overflow-hidden md:mx-25">
       {/* Replace img tags with Image component */}
       <div className="w-[200px] md:w-[15em] md:absolute md:top-[67px] md:left-[57px] md:w-[300px] md:h-[300px]">
         <Image
@@ -77,7 +77,7 @@ export default function SiteHeader() {
       <div className="z-0 left-[35px] top-[375px] w-[250px] h-[400px] absolute md:h-[430px] md:w-80 md:top-[150px] md:left-[370px] rounded-xl bg-yellow-300" />
       <BurgerNavbar />
       {/* Replace the second img tag */}
-      <div className="w-[30em] absolute top-[650px] md:top-[7px] md:left-[780px] lg:w-[500px] lg:h-[500px]">
+      <div className="w-[340px] absolute top-[650px] md:top-[7px] md:left-[780px] lg:w-[500px] lg:h-[500px]">
         <Image
           src="/images/logo-transparent.png"
           alt="osvaldy the barber logo"
