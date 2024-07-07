@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import Link from 'next/link';
 
 export function Footer() {
   return (
@@ -27,15 +28,17 @@ export function Footer() {
 
           {/* Social Media Links */}
           <div className="flex space-x-6 mt-6 md:mt-0">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-white hover:text-white transition">
+            <Link className='hover:text-yellow-300' href="/contact">
+            Contact Me</Link>
+            {/* <a href="https://facebook.com" target="_blank" rel="noreferrer" className="text-white hover:text-white transition">
               <FaFacebook size={24} />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-white hover:text-white transition">
+            </a> */}
+            {/* <a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-white hover:text-white transition">
               <FaTwitter size={24} />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-white hover:text-white transition">
+            </a> */}
+            <Link href="https://www.instagram.com/osvaldythebarber/?locale=us&hl=am-et" target="_blank" rel="noreferrer" className="text-white hover:text-white transition">
               <FaInstagram size={24} />
-            </a>
+            </Link>
           </div>
         </div>
 
