@@ -12,7 +12,7 @@ function ContactForm() {
     });
 
     // Handle input changes
-    const handleChange = (e) => {
+    const handleChange = (e: { target: { name: any; value: any; }; }) => {
         const { name, value } = e.target;
         setFormData((prevState) => ({
             ...prevState,
@@ -21,7 +21,7 @@ function ContactForm() {
     };
 
     // Handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault(); // Prevent form from refreshing the page on submit
         console.log("Form Data Submitted:", formData);
         // Optionally, reset the form here if needed
