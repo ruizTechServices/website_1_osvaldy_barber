@@ -4,7 +4,6 @@ import Ctaindex from "@/components/mainUI/cta_index";
 import Calendermain from "@/components/mainUI/calender_display";
 import NewCarousel from "@/components/mainUI/newCarousel";
 import { Footer } from "@/components/mainUI/footer";
-import AppointmentsComponent from "@/components/mainUI/appointments";
 
 
 export default function Home() {
