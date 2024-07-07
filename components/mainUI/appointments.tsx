@@ -21,24 +21,29 @@ const AppointmentsComponent: React.FC = () => {
 
   useEffect(() => {
     const fetchAppointments = async () => {
-      const response = await supabase.auth.getUser();
-      const user: User | null = response.user;
+      const { data: { session }, error } = await supabase.auth.getSession();
 
-      if (!user) {
+      if (error) {
+        setError(`Error fetching user session: ${error.message}`);
+        setLoading(false);
+        return;
+      }
+
+      if (!session?.user) {
         setError('No user signed in.');
         setLoading(false);
         return;
       }
 
-      // Fetch appointments based on role
-      const { data, error } = await supabase
+      // Fetch appointments based on user ID
+      const { data, error: fetchError } = await supabase
         .from<Appointment>('appointments')
         .select('*')
-        .eq('user_id', user.id);
+        .eq('user_id', session.user.id);
 
-      if (error) {
-        setError(`Error fetching appointments: ${error.message}`);
-        console.error('Error fetching appointments', error);
+      if (fetchError) {
+        setError(`Error fetching appointments: ${fetchError.message}`);
+        console.error('Error fetching appointments', fetchError);
       } else {
         setAppointments(data || []);
         console.log('Appointments:', data);

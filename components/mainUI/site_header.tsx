@@ -77,7 +77,7 @@ export default function SiteHeader() {
         {/***/}
         <BurgerNavbar />
         {/* Replace the second img tag */}
-        <div className="w-[340px] absolute top-[650px] md:top-[170px] md:left-[550px] lg:w-[500px] lg:h-[500px]">
+        <div className="w-[340px] absolute top-[150px] md:top-[170px] md:left-[550px] lg:w-[500px] lg:h-[500px]">
           <Image
             src="/images/logo-transparent.png"
             alt="osvaldy the barber logo"
