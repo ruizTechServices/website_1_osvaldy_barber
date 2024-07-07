@@ -21,7 +21,8 @@ const AppointmentsComponent: React.FC = () => {
 
   useEffect(() => {
     const fetchAppointments = async () => {
-      const user: User | null = supabase.auth.getUser();
+      const response = await supabase.auth.getUser();
+      const user: User | null = response.user;
 
       if (!user) {
         setError('No user signed in.');
@@ -59,7 +60,6 @@ const AppointmentsComponent: React.FC = () => {
           {appointments.map((appointment) => (
             <li key={appointment.id}>
               {appointment.date} - {appointment.time}
-              {/* Assuming 'date' and 'time' are fields in your appointments table */}
             </li>
           ))}
         </ul>
