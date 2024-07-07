@@ -37,6 +37,8 @@ const Login = () => {
     } else {
       setMessage('User logged in successfully!');
     }
+    //how do I reroute the user accordingly from Supabase directl? In this case, I want to reroute 
+    //`giosterr44@gmail.com` to the admin page and all other users to the userDash page
   };
 
   return (

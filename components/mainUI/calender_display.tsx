@@ -1,10 +1,10 @@
-// C:\Users\Gio\OneDrive\Desktop\ruizTechServices\osvaldy_barber\websites\nextjs\website_1_osvaldy_barber\components\mainUI\calendar_display.tsx
 'use client';
 import React, { useState, useEffect } from 'react';
-import { supabase } from '@/lib/supabase/client'; // Adjust the path as necessary
+import { supabase } from '@/lib/supabase/client';
 import { Calendar } from "@/components/ui/calendar";
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription, DialogClose } from "@/components/ui/dialog";
 import Link from 'next/link';
+import LoginModal from './loginModal'; // Import the LoginModal component
 
 interface Appointment {
   start_time: string;
@@ -17,6 +17,7 @@ export default function CalendarMain() {
     const [selected, setSelected] = useState<Date | undefined>(undefined);
     const [isOpen, setIsOpen] = useState(false);
     const [appointments, setAppointments] = useState<Appointment[]>([]);
+    const [loginModalOpen, setLoginModalOpen] = useState(false);
 
     const handleSelect = async (day: Date) => {
         setDate(day);
@@ -29,7 +30,7 @@ export default function CalendarMain() {
         const { data, error } = await supabase
             .from('appointments')
             .select('*')
-            .eq('appointment_date', selectedDate.toISOString().slice(0, 10)); // Assuming 'appointment_date' is stored as a date
+            .eq('appointment_date', selectedDate.toISOString().slice(0, 10));
 
         if (error) console.error('Error fetching appointments', error);
         else setAppointments(data || []);
@@ -58,7 +59,7 @@ export default function CalendarMain() {
                                 <p>
                                     {appt.notes
                                         ? `Not available - ${appt.notes}`
-                                        : <button className='rounded-xl bg-yellow-300 p-2'><Link href={'/appointments'}>Make an appointment</Link></button>}{/*<==Reroute this to `create an appointment` page*/}
+                                        : <button className='rounded-xl bg-yellow-300 p-2' onClick={() => setLoginModalOpen(true)}>Make an appointment</button>}{/*I want to place a modal here that asks the user if they have logged in or if they want to register* */}
                                 </p>
                             </div>
                         ))}
@@ -68,6 +69,7 @@ export default function CalendarMain() {
                     </DialogClose>
                 </DialogContent>
             </Dialog>
+            <LoginModal open={loginModalOpen} onOpenChange={setLoginModalOpen} /> {/* Use the LoginModal component */}
         </div>
     );
 }
