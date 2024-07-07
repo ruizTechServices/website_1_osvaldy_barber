@@ -37,7 +37,7 @@ const AppointmentsComponent: React.FC = () => {
 
       // Fetch appointments based on user ID
       const { data, error: fetchError } = await supabase
-        .from<Appointment>('appointments')
+        .from<Appointment, Appointment>('appointments')
         .select('*')
         .eq('user_id', session.user.id);
 

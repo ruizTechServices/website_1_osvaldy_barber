@@ -18,7 +18,7 @@ export default function Home() {
       <Calendermain />
       <div className="container flex justify-center items-center w-full"></div>      
       <Ctaindex title="Schedule your haircut now!"/>
-      <AppointmentsComponent />
+      {/* <AppointmentsComponent /> */}
       <Footer />
     </>
   );
