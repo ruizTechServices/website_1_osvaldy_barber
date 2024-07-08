@@ -25,8 +25,6 @@ const NewCarousel = () => {
     "/images/IMG_9997.jpg",
   ];
 
-  const angle = currentIndex * -72;
-
   const handleLeftClick = () => {
     setCurrentIndex(currentIndex > 0 ? currentIndex - 1 : carouselImages.length - 1);
   };
@@ -36,7 +34,7 @@ const NewCarousel = () => {
   };
 
   return (
-    <div className="flex items-center justify-center w-full h-60 md:h-[500px] bg-black">
+    <div id="gallery" className="flex items-center justify-center w-full h-60 md:h-[500px] bg-black">
       {/* Container with perspective to enable 3D effects */}
       <div className="relative w-full max-w-[800px]" style={{ perspective: '1000px' }}>
         {/* Inner container with 3D transform based on current index */}
@@ -44,7 +42,7 @@ const NewCarousel = () => {
           className="relative w-full h-full"
           style={{
             transformStyle: 'preserve-3d',
-            transform: `rotateY(${angle}deg)`,
+            transform: `rotateY(${currentIndex * -72}deg)`,
             transition: 'transform 1s',
           }}
         >

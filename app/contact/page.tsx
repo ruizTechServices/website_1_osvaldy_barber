@@ -33,12 +33,12 @@ function ContactForm() {
     };
 
     return (
-        <div className="container mx-auto border-2 mt-5 p-5">
+        <div className="w-[200px] md:container md:mx-auto border-2 ml-[150px] mt-[200px] p-5 md:w-[300px]">
             <form className="flex flex-col w-fit text-white gap-3" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Name:</label>
                     <Input
-                        className="text-black"
+                        className="text-black w-full"
                         type="text"
                         id="name"
                         name="name"
@@ -49,7 +49,7 @@ function ContactForm() {
                 <div>
                     <label htmlFor="email">Email:</label>
                     <Input
-                        className="text-black"
+                        className="text-black w-full"
                         type="email"
                         id="email"
                         name="email"
@@ -60,7 +60,7 @@ function ContactForm() {
                 <div>
                     <label htmlFor="message">Message:</label>
                     <textarea
-                        className="text-black"
+                        className="text-black rounded-xl w-full"
                         id="message"
                         name="message"
                         value={formData.message}

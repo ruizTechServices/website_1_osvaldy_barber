@@ -10,6 +10,10 @@ const BurgerNavbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="w-fit text-white absolute top-10 left-[300px] md:top-0 md:left-[1200px] z-20">
       <div className="flex justify-between items-center p-4">
@@ -38,10 +42,10 @@ const BurgerNavbar = () => {
       <div
         className={`fixed top-0 left-0 w-[300px] h-screen bg-gray-800 text-white flex flex-col justify-center items-center z-50 overflow-hidden transition-transform duration-300 ${isOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`}
       >
-        <Link href="/" className="mb-4 text-xl">Home</Link>
-        <Link href="#" className="mb-4 text-xl">Prices</Link>
-        <Link href="#" className="mb-4 text-xl">Gallery</Link>
-        <Link href="/login_register" className="mb-4 text-xl">login/register</Link>
+        <Link href="/" className="mb-4 text-xl" onClick={closeMenu}>Home</Link>
+        <Link href="#" className="mb-4 text-xl" onClick={closeMenu}>Prices</Link>
+        <Link href="#gallery" className="mb-4 text-xl" onClick={closeMenu}>Gallery</Link>
+        <Link href="/login_register" className="mb-4 text-xl" onClick={closeMenu}>Login/Register</Link>
         <div className="">
           <div className="w-[250px] text-2xl font-bold">
             <Image src="/images/logo-transparent.png" alt="Logo" width={250} height={100} layout="responsive" />
