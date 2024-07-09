@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import React, { useState } from "react";
-import { supabase } from "/home/runner/website1osvaldybarber/lib/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 
 //Make this entire thing into a component and place it in the main page
 //It is already connected and working with the database
