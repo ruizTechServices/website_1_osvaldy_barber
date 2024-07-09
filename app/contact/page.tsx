@@ -2,7 +2,10 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import React, { useState } from "react";
+import { supabase } from "/home/runner/website1osvaldybarber/lib/supabase/client";
 
+//Make this entire thing into a component and place it in the main page
+//It is already connected and working with the database
 function ContactForm() {
     // State for storing form field values
     const [formData, setFormData] = useState({
@@ -21,20 +24,38 @@ function ContactForm() {
     };
 
     // Handle form submission
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault(); // Prevent form from refreshing the page on submit
         console.log("Form Data Submitted:", formData);
-        // Optionally, reset the form here if needed
-        setFormData({
-            name: "",
-            email: "",
-            message: "",
-        });
+
+        const { data, error } = await supabase
+            .from("Contact")
+            .insert([
+                {
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                },
+            ]);
+
+        if (error) {
+            console.error("Error inserting data:", error);
+        } else {
+            console.log("Data inserted successfully:", data);
+            setFormData({
+                name: "",
+                email: "",
+                message: "",
+            });
+        }
     };
 
     return (
         <div className="w-[200px] md:container md:mx-auto border-2 ml-[150px] mt-[200px] p-5 md:w-[300px]">
-            <form className="flex flex-col w-fit text-white gap-3" onSubmit={handleSubmit}>
+            <form
+                className="flex flex-col w-fit text-white gap-3"
+                onSubmit={handleSubmit}
+            >
                 <div>
                     <label htmlFor="name">Name:</label>
                     <Input
