@@ -4,11 +4,18 @@ import { Input } from "@/components/ui/input";
 import React, { useState } from "react";
 import { supabase } from "@/lib/supabase/client";
 
-//Make this entire thing into a component and place it in the main page
-//It is already connected and working with the database
+// Make this entire thing into a component and place it in the main page
+// It is already connected and working with the database
 function ContactForm() {
     // State for storing form field values
     const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    // State for storing validation errors
+    const [errors, setErrors] = useState({
         name: "",
         email: "",
         message: "",
@@ -21,12 +28,29 @@ function ContactForm() {
             ...prevState,
             [name]: value,
         }));
+        setErrors((prevState) => ({
+            ...prevState,
+            [name]: "",
+        }));
     };
 
     // Handle form submission
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault(); // Prevent form from refreshing the page on submit
         console.log("Form Data Submitted:", formData);
+
+        // Check for empty fields and set error messages
+        const newErrors = {
+            name: formData.name ? "" : "Write your full name",
+            email: formData.email ? "" : "Write an email",
+            message: formData.message ? "" : "Write a message",
+        };
+        setErrors(newErrors);
+
+        // If there are any errors, do not submit the form
+        if (Object.values(newErrors).some((error) => error !== "")) {
+            return;
+        }
 
         const { data, error } = await supabase
             .from("Contact")
@@ -66,6 +90,7 @@ function ContactForm() {
                         value={formData.name}
                         onChange={handleChange}
                     />
+                    {errors.name && <p className="text-red-500">{errors.name}</p>}
                 </div>
                 <div>
                     <label htmlFor="email">Email:</label>
@@ -77,6 +102,7 @@ function ContactForm() {
                         value={formData.email}
                         onChange={handleChange}
                     />
+                    {errors.email && <p className="text-red-500">{errors.email}</p>}
                 </div>
                 <div>
                     <label htmlFor="message">Message:</label>
@@ -87,6 +113,7 @@ function ContactForm() {
                         value={formData.message}
                         onChange={handleChange}
                     />
+                    {errors.message && <p className="text-red-500">{errors.message}</p>}
                 </div>
                 <Button type="submit">Submit</Button>
             </form>
