@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-black scroll-smooth`}>
+      <body className={`${inter.className} bg-black scroll-smooth grid grid-cols-12 grid-row-5 md:grid-cols-12`}>
           <BurgerNavbar />
         {children}
       </body>

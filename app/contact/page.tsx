@@ -22,7 +22,7 @@ function ContactForm() {
     });
 
     // Handle input changes
-    const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    const handleChange = (e: { target: { name: any; value: any } }) => {
         const { name, value } = e.target;
         setFormData((prevState) => ({
             ...prevState,
@@ -35,7 +35,7 @@ function ContactForm() {
     };
 
     // Handle form submission
-    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    const handleSubmit = async (e: { preventDefault: () => void }) => {
         e.preventDefault(); // Prevent form from refreshing the page on submit
         console.log("Form Data Submitted:", formData);
 
@@ -52,15 +52,13 @@ function ContactForm() {
             return;
         }
 
-        const { data, error } = await supabase
-            .from("Contact")
-            .insert([
-                {
-                    name: formData.name,
-                    email: formData.email,
-                    message: formData.message,
-                },
-            ]);
+        const { data, error } = await supabase.from("Contact").insert([
+            {
+                name: formData.name,
+                email: formData.email,
+                message: formData.message,
+            },
+        ]);
 
         if (error) {
             console.error("Error inserting data:", error);
@@ -75,7 +73,7 @@ function ContactForm() {
     };
 
     return (
-        <div className="w-[200px] md:container md:mx-auto border-2 ml-[150px] mt-[200px] p-5 md:w-[300px]">
+        <div className="grid col-start-5 mt-48 ml-20 md:col-start-5 w-[200px] md:container md:mx-auto border-2 p-5 md:w-[300px]">
             <form
                 className="flex flex-col w-fit text-white gap-3"
                 onSubmit={handleSubmit}
@@ -90,7 +88,9 @@ function ContactForm() {
                         value={formData.name}
                         onChange={handleChange}
                     />
-                    {errors.name && <p className="text-red-500">{errors.name}</p>}
+                    {errors.name && (
+                        <p className="text-red-500">{errors.name}</p>
+                    )}
                 </div>
                 <div>
                     <label htmlFor="email">Email:</label>
@@ -102,7 +102,9 @@ function ContactForm() {
                         value={formData.email}
                         onChange={handleChange}
                     />
-                    {errors.email && <p className="text-red-500">{errors.email}</p>}
+                    {errors.email && (
+                        <p className="text-red-500">{errors.email}</p>
+                    )}
                 </div>
                 <div>
                     <label htmlFor="message">Message:</label>
@@ -113,7 +115,9 @@ function ContactForm() {
                         value={formData.message}
                         onChange={handleChange}
                     />
-                    {errors.message && <p className="text-red-500">{errors.message}</p>}
+                    {errors.message && (
+                        <p className="text-red-500">{errors.message}</p>
+                    )}
                 </div>
                 <Button type="submit">Submit</Button>
             </form>
