@@ -52,7 +52,7 @@ function ContactForm() {
             return;
         }
 
-        const { data, error } = await supabase.from("Contact").insert([
+        const { data, error } = await supabase.from("contact").insert([
             {
                 name: formData.name,
                 email: formData.email,
