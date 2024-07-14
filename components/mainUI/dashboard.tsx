@@ -32,6 +32,7 @@ import {
 } from "@/components/ui/table";
 import Image from "next/image";
 import { JSX, SVGProps } from "react";
+import Logout from "./supabase/authentication/logout";
 
 export default function Dashboard() {
   return (
@@ -148,7 +149,7 @@ export default function Dashboard() {
                 <DropdownMenuItem>Settings</DropdownMenuItem>
                 <DropdownMenuItem>Support</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>Logout</DropdownMenuItem>
+                <DropdownMenuItem><Logout/></DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>

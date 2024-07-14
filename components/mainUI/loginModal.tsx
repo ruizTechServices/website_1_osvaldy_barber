@@ -19,10 +19,10 @@ const LoginModal: React.FC<LoginModalProps> = ({ open, onOpenChange }) => {
                     <p>Please log in or register to make an appointment.</p>
                     <div className="flex flex-col gap-4">
                         <Link href="/login_register">
-                            <button className="rounded-xl bg-black p-2 text-white">Log In</button>
+                            <button className="rounded-xl bg-yellow-500 p-2 text-white hover:bg-blue-300 hover:text-black">Log In</button>
                         </Link>
                         <Link href="/login_register">
-                            <button className="rounded-xl bg-yellow-500 p-2 text-white">Register</button>
+                            <button className="rounded-xl bg-yellow-300 p-2 text-black hover:bg-blue-500 hover:text-white">Register</button>
                         </Link>
                     </div>
                 </DialogDescription>

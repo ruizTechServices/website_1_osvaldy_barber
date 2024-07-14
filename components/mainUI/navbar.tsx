@@ -43,8 +43,8 @@ const BurgerNavbar = () => {
         className={`fixed top-0 left-0 w-[300px] h-screen bg-gray-800 text-white flex flex-col justify-center items-center z-50 overflow-hidden transition-transform duration-300 ${isOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`}
       >
         <Link href="/" className="mb-4 text-xl" onClick={closeMenu}>Home</Link>
-        <Link href="#" className="mb-4 text-xl" onClick={closeMenu}>Prices</Link>
-        <Link href="#gallery" className="mb-4 text-xl" onClick={closeMenu}>Gallery</Link>
+        <Link href="#prices-section" className="mb-4 text-xl" onClick={closeMenu}>Prices</Link>{/*I want to hide these when it is not on the home page. I want these links to be seen ONLY in the home page <====================*/}
+        <Link href="#gallery" className="mb-4 text-xl" onClick={closeMenu}>Gallery</Link>{/*I want to hide these when it is not on the home page. I want these links to be seen ONLY in the home page <====================*/}
         <Link href="/login_register" className="mb-4 text-xl" onClick={closeMenu}>Login/Register</Link>
         <div className="">
           <div className="w-[250px] text-2xl font-bold">

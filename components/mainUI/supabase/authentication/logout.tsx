@@ -14,13 +14,14 @@ const Logout = () => {
       setMessage(`Error: ${error.message}`);
     } else {
       setMessage('User logged out successfully!');
+       window.location.href = '/';
     }
   };
 
   return (
     <div>
       <Button onClick={handleLogout}>Log Out</Button>
-      <p className='text-white'>{message}</p>
+      <p className='text-white text-sm'>{message}</p>
     </div>
   );
 };

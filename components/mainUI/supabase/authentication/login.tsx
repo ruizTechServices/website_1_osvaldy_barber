@@ -1,4 +1,3 @@
-// components/Login.tsx
 'use client';
 
 import { useState } from 'react';
@@ -17,7 +16,11 @@ const loginSchema = z.object({
 
 type LoginFormValues = z.infer<typeof loginSchema>;
 
-const Login = () => {
+type LoginProps = {
+  redirectHref: string;
+};
+
+const Login: React.FC<LoginProps> = ({ redirectHref }) => {
   const [message, setMessage] = useState<string>('');
 
   const form = useForm<LoginFormValues>({
@@ -36,9 +39,12 @@ const Login = () => {
       setMessage(`Error: ${error.message}`);
     } else {
       setMessage('User logged in successfully!');
+      if (email === 'giosterr44@gmail.com') {
+        window.location.href = '/admin';
+      } else {
+        window.location.href = '/';
+      }
     }
-    //how do I reroute the user accordingly from Supabase directl? In this case, I want to reroute 
-    //`giosterr44@gmail.com` to the admin page and all other users to the userDash page
   };
 
   return (
@@ -78,6 +84,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-///create a prop that takes in an href to reroute to after the user logs in
