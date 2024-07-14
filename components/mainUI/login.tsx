@@ -4,7 +4,7 @@ import Login from '../mainUI/supabase/authentication/login';
 const LoginComp: React.FC = () => {
 
   return (
-    <Login />  // Use the renamed component here
+    <Login redirectHref={'/'} />  // Use the renamed component here
   );
 };
 
