@@ -73,55 +73,62 @@ function ContactForm() {
     };
 
     return (
-        <div className="grid col-start-5 mt-48 ml-20 md:col-start-5 w-[200px] md:container md:mx-auto border-2 p-5 md:w-[300px]">
-            <form
-                className="flex flex-col w-fit text-white gap-3"
-                onSubmit={handleSubmit}
-            >
-                <div>
-                    <label htmlFor="name">Name:</label>
-                    <Input
-                        className="text-black w-full"
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                    />
-                    {errors.name && (
-                        <p className="text-red-500">{errors.name}</p>
-                    )}
+        <>
+            
+            <div className="grid col-start-5 mt-48 ml-20 md:col-start-5 w-[200px] md:container md:mx-auto p-5 flex justify-center">
+                <div className="text-white flex flex-col text-center">
+                    <h1>Contact Osvaldy</h1>
+                    <p>Do you have a specific question or concern?</p>
                 </div>
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <Input
-                        className="text-black w-full"
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                    />
-                    {errors.email && (
-                        <p className="text-red-500">{errors.email}</p>
-                    )}
-                </div>
-                <div>
-                    <label htmlFor="message">Message:</label>
-                    <textarea
-                        className="text-black rounded-xl w-full"
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                    />
-                    {errors.message && (
-                        <p className="text-red-500">{errors.message}</p>
-                    )}
-                </div>
-                <Button type="submit">Submit</Button>
-            </form>
-        </div>
+                <form
+                    className="flex flex-col w-fit text-white gap-3"
+                    onSubmit={handleSubmit}
+                >
+                    <div>
+                        <label htmlFor="name">Name:</label>
+                        <Input
+                            className="text-black w-full"
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                        />
+                        {errors.name && (
+                            <p className="text-red-500">{errors.name}</p>
+                        )}
+                    </div>
+                    <div>
+                        <label htmlFor="email">Email:</label>
+                        <Input
+                            className="text-black w-full"
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
+                        {errors.email && (
+                            <p className="text-red-500">{errors.email}</p>
+                        )}
+                    </div>
+                    <div>
+                        <label htmlFor="message">Message:</label>
+                        <textarea
+                            className="text-black rounded-xl w-full"
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                        />
+                        {errors.message && (
+                            <p className="text-red-500">{errors.message}</p>
+                        )}
+                    </div>
+                    <Button type="submit">Submit</Button>
+                </form>
+            </div>
+        </>
     );
 }
 
