@@ -15,9 +15,9 @@ const BurgerNavbar = () => {
   };
 
   return (
-    <nav className="w-fit text-white absolute top-10 left-[300px] md:top-0 md:left-[1200px] z-20">
+    <nav className="rounded-full w-fit h-fit border-2 text-white absolute top-10 left-[300px] md:top-0 md:left-[1200px] z-20">
       <div className="flex justify-between items-center p-4">
-        <div>
+        <div className=' flex'>
           <button
             onClick={toggleMenu}
             className="focus:outline-none menu-button"

@@ -25,18 +25,22 @@ export default function SiteHeader() {
     { src: "/images/IMG_9997.jpg", width: 400, height: 400 },
   ]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const backgroundImage = "/images/backgroundImage-1.png";
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((currentIndex) => (currentIndex + 1) % images.length);
-    }, 3000); // Change image every 3000 milliseconds (3 seconds)
+    }, 3000);
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
-    <div className="bg-black h-[1000px] w-full lg:h-[800px] ">
+    <div
+      className="bg-black h-[1000px] w-full lg:h-full bg-cover"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       <div className="relative w-auto md:w-[1212px] md:h-[764px] mx-auto">
-        <div className="w-[200px] md:w-[200px]">
+        <div className="bg-black rounded-full w-[200px] md:w-[200px]">
           <Image
             src="/images/logo-1.png"
             alt="main-logo"
@@ -45,7 +49,7 @@ export default function SiteHeader() {
             layout="responsive"
           />
         </div>
-        <div className="relative h-[400px] top-0 left-0 ">
+        <div className="relative h-[900px] top-0 left-0 ">
           <div className="hidden md:block z-10 absolute top-[10px] left-[150px] w-[250px] md:w-80 h-[400px] md:h-[450px] overflow-hidden">
             {images.map((image, index) => (
               <Image
@@ -77,12 +81,12 @@ export default function SiteHeader() {
         {/***/}
         <BurgerNavbar />
         {/* Replace the second img tag */}
-        <div className="w-[340px] absolute top-[150px] md:top-[170px] md:left-[550px] lg:w-[500px] lg:h-[500px]">
+        <div className="rounded-full bg-black h-[300px] w-[340px] left-[30px] absolute top-[250px] md:top-[170px] md:left-[550px] lg:w-[500px] lg:h-[500px]">
           <Image
             src="/images/logo-transparent.png"
             alt="osvaldy the barber logo"
-            width={500}
-            height={500}
+            width={300}
+            height={300}
             layout="responsive"
           />
         </div>

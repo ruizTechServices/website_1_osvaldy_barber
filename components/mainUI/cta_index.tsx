@@ -8,7 +8,7 @@ interface CtaindexProps {
 // Use destructuring to directly extract `title` from props
 export default function Ctaindex({ title }: CtaindexProps) {
   return (
-    <div className='bg-white text-black text-6xl h-[500px] flex flex-col items-center justify-center gap-10 mt-10 text-center m-2 font-bold'>
+    <div className='my-20 bg-white text-black text-6xl h-[500px] flex flex-col items-center justify-center gap-10 mt-10 text-center m-2 font-bold'>
         <h1 className='text-black'>{title}</h1>{/* Use the title prop for the h1 text */}
     </div>
   )
