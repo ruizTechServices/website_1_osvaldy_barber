@@ -5,7 +5,7 @@ export default function Aboutsection() {
       const backgroundImage = "/images/backgroundImage-1.png";
 
   return (
-    <div className='h-screen flex flex-col items-center justify-center mt-10 bg-black' style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <div className='h-screen bg-cover flex flex-col items-center justify-center mt-10 bg-black' style={{ backgroundImage: `url(${backgroundImage})` }}>
         <Image 
             src="/images/logo-1.png" 
             alt="Osvaldy Logo"

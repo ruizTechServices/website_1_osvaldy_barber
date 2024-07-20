@@ -8,6 +8,8 @@ import HaircutPriceBoard from "@/components/mainUI/prices";
 
 
 export default function Home() {
+  const backgroundImage = "/images/backgroundImage-1.png";
+
   return (
     <>
       <Siteheader />
@@ -19,7 +21,7 @@ export default function Home() {
       <div className="container flex justify-center items-center w-full"></div>      
       <Ctaindex title="Schedule your haircut now!"/>
       {/* <AppointmentsComponent /> */}
-      <div className="flex justify-center" id="prices-section">
+      <div className="flex justify-center bg-cover" style={{ backgroundImage: `url(${backgroundImage})` }} id="prices-section">
         <HaircutPriceBoard />
       </div>
       <Ctaindex title="El Leon De Nueva Yol!"/>

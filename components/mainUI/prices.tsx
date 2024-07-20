@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const HaircutPriceBoard = () => {
   const prices = {
     menHaircut: 20,
