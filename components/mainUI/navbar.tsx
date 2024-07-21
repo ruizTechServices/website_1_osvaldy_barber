@@ -1,9 +1,9 @@
-//components/mainUI/navbar.tsx
+// components/mainUI/navbar.tsx
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation'; // Changed from 'next/navigation' which is incorrect
+import { usePathname } from 'next/navigation'; // Corrected import for usePathname
 import { supabase } from '@/lib/supabase/client';
 
 async function getUser() {
@@ -30,8 +30,8 @@ const BurgerNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const router = useRouter();
-  const isHomePage = router.pathname === '/';
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -39,7 +39,6 @@ const BurgerNavbar = () => {
       setIsLoggedIn(!!user);
       if (user && user.email === 'giosterr44@gmail.com') {
         setIsAdmin(true);
-        // router.push('/admin'); // Navigation to admin page if needed
       } else {
         setIsAdmin(false);
       }
@@ -51,8 +50,8 @@ const BurgerNavbar = () => {
       setIsLoggedIn(!!session);
     });
 
-    return () => subscription;
-  }, [router]); // Added dependency array with router
+    return () => subscription.subscription; // Corrected to ensure proper cleanup
+  }, [pathname]); // Ensure pathname is part of the dependency array if used in the effect
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -67,9 +66,7 @@ const BurgerNavbar = () => {
       <div className="flex justify-between items-center p-4">
         <div className="flex">
           <button onClick={toggleMenu} className="focus:outline-none menu-button" aria-expanded={isOpen} aria-label="Toggle menu">
-            <div className="w-6 h-6 flex flex-col justify-between items-center">
-              {/* Icons for menu toggle */}
-            </div>
+            {/* Icons for menu toggle */}
           </button>
         </div>
       </div>
@@ -85,8 +82,7 @@ const BurgerNavbar = () => {
           <Link href="/login_register" className="mb-4 text-xl" onClick={closeMenu}>Login/Register</Link>
         ) : (
           <>
-            {!isAdmin ? (<Link href="/dashboard" className="mb-4 text-xl" onClick={closeMenu}>user</Link>) : (<Link href="/admin" className="mb-4 text-xl" onClick={closeMenu}>admin</Link>)}
-            
+            {!isAdmin ? (<Link href="/dashboard" className="mb-4 text-xl" onClick={closeMenu}>Dashboard</Link>) : (<Link href="/admin" className="mb-4 text-xl" onClick={closeMenu}>Admin</Link>)}
             <button onClick={handleLogout} className="mb-4 text-xl">Logout</button>
           </>
         )}
