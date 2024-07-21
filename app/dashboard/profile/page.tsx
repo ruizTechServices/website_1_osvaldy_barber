@@ -1,5 +1,6 @@
 import React from 'react';
 
+//app/dashboard/profile/page.tsx
 const ProfilePage: React.FC = () => {
   return (
     <div className="profile-page bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col items-center p-4">

@@ -1,3 +1,4 @@
+//app/dashboard/settings/page.tsx
 import React from 'react';
 
 const SettingsPage: React.FC = () => {

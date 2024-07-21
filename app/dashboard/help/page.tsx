@@ -1,3 +1,4 @@
+//app/dashboard/help/page.tsx
 import React from 'react';
 
 const HelpPage: React.FC = () => {
