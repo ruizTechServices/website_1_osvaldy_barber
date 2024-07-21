@@ -1,10 +1,11 @@
+// app/admin/page.tsx
 import Dashboard from '@/components/mainUI/dashboard'
 import React from 'react'
 
-export default function page() {
+export default function AdminPage() {
   return (
-    <div>
-        <Dashboard />
+    <div className="container mx-auto px-4 py-8">
+      <Dashboard />
     </div>
   )
 }
