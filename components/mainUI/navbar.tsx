@@ -3,33 +3,30 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation'; // Corrected import for usePathname
+import { usePathname } from 'next/navigation';
 import { supabase } from '@/lib/supabase/client';
+import { Session, User } from '@supabase/supabase-js';
 
-async function getUser() {
+interface UserResponse {
+    data: User | null;
+    error: Error | null;
+}
+
+async function getUser(): Promise<User | null> {
     try {
-        const { data, error } = await supabase.auth.getUser();
+        const { data, error }: UserResponse = await supabase.auth.getUser();
         if (error) throw error;
-        return data.user;
+        return data;
     } catch (error) {
         console.error("Error getting user:", error);
         return null;
     }
 }
 
-async function handleLogout() {
-    try {
-        let { error } = await supabase.auth.signOut();
-        if (error) throw error;
-    } catch (error) {
-        console.error("Error signing out:", error);
-    }
-}
-
 const BurgerNavbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const pathname = usePathname();
   const isHomePage = pathname === '/';
 
@@ -46,12 +43,15 @@ const BurgerNavbar = () => {
 
     checkAuth();
 
-    const { data: subscription } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: subscription } = supabase.auth.onAuthStateChange((_event: string, session: Session | null) => {
       setIsLoggedIn(!!session);
     });
 
-    return () => subscription.subscription; // Corrected to ensure proper cleanup
-  }, [pathname]); // Ensure pathname is part of the dependency array if used in the effect
+    // Correct cleanup: directly calling the unsubscribe method without returning it
+    return () => {
+        subscription?.unsubscribe();
+    };
+  }, [pathname]); // Dependency on pathname if its value is used inside the effect
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
