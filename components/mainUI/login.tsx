@@ -1,4 +1,4 @@
-// Rename the imported Login component
+// components/mainUI/login.tsx
 import Login from '../mainUI/supabase/authentication/login';
 
 const LoginComp: React.FC = () => {

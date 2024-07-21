@@ -1,3 +1,4 @@
+//app/login_register/page.tsx
 "use client";
 import React, { useState } from "react";
 import Image from "next/image"; // Import the Image component
