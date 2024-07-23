@@ -31,11 +31,12 @@ export default function SiteHeader() {
       <div className="relative w-auto md:w-[1212px] md:h-[764px] mx-auto">
         <div className="bg-black rounded-full w-[200px] md:w-[200px]">
           <Image
-            src="/images/logo-1.png"
+            src="/images/design/logo-1.png"
             alt="main-logo"
-            width={300}
-            height={300}
+            width={200}
+            height={200}
             layout="responsive"
+            className="border-2 border-white rounded-full"
           />
         </div>
         <div className="relative h-[900px] top-0 left-0 ">
@@ -72,7 +73,7 @@ export default function SiteHeader() {
         {/* Replace the second img tag */}
         <div className="rounded-full bg-black h-[300px] w-[340px] left-[30px] absolute top-[250px] md:top-[170px] md:left-[550px] lg:w-[500px] lg:h-[500px]">
           <Image
-            src="/images/logo-transparent.png"
+            src="/images/design/logo-transparent.png"
             alt="osvaldy the barber logo"
             width={300}
             height={300}
