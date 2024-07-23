@@ -5,7 +5,7 @@ import Calendermain from "@/components/mainUI/calender_display";
 import NewCarousel from "@/components/mainUI/newCarousel";
 import { Footer } from "@/components/mainUI/footer";
 import HaircutPriceBoard from "@/components/mainUI/prices";
-import Siteheader2 from "@/components/mainUI/site_header2";
+// import Siteheader2 from "@/components/mainUI/site_header2";
 
 
 export default function Home() {
@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <>
       <Siteheader />
-      <Siteheader2 />
-      <Ctaindex title="Haircuts and Beauty Services" />
+      {/* <Siteheader2 />
+      <Ctaindex title="Haircuts and Beauty Services" /> */}
       <Aboutsection />
       <NewCarousel />
       <Ctaindex title="On-demand Haircuts Based on Availabilty" />
