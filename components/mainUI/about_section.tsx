@@ -2,15 +2,15 @@ import React from 'react';
 import Image from 'next/image'; // Import the Image component from next/image
 
 export default function Aboutsection() {
-      const backgroundImage = "/images/backgroundImage-1.png";
+      const backgroundImage = "/images/design/backgroundImage-1.png";
 
   return (
-    <div className='h-screen bg-cover flex flex-col items-center justify-center mt-10 bg-black' style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <div className='h-screen bg-cover flex flex-col items-center justify-center bg-black' style={{ backgroundImage: `url(${backgroundImage})` }}>
         <Image 
             src="/images/logo-1.png" 
             alt="Osvaldy Logo"
-            width={650}  // Specify width
-            height={300} // Specify height
+            width={750}  
+            height={700} 
         />
         <p className='absolute text-center bg-black md:text-4xl text-white text-2xl'>
             Osvaldy has many years in the 

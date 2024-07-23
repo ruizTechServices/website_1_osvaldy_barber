@@ -7,11 +7,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const links = [
-    { name: "Home", href: "/" },
-    { name: "Appointments", href: "/dashboard/appointments" },
-    { name: "Profile", href: "/dashboard/profile" },
-    { name: "Settings", href: "/dashboard/settings" },
-    { name: "Reports", href: "/dashboard/help" },
+    { name: "Home", icon: "home", href: "/" },
+    { name: "Appointments", icon: "calendar", href: "/dashboard/appointments" },
+    { name: "Profile", icon: "user", href: "/dashboard/profile" },
+    { name: "Settings", icon: "settings", href: "/dashboard/settings" },
+    { name: "Reports", icon: "chart-bar", href: "/dashboard/help" },
   ];
 
   return (

@@ -73,7 +73,6 @@ const BurgerNavbar = () => {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
 
-      // Broadcast the auth state change
       const authChannel = supabase.channel("auth");
       authChannel.send({
         type: "broadcast",
@@ -89,16 +88,16 @@ const BurgerNavbar = () => {
   };
 
   return (
-    <nav className="rounded-full w-fit h-fit border-2 text-white absolute top-10 left-[300px] md:top-0 md:left-[1200px] z-20">
-      <div className="flex justify-between items-center p-4">
+    <nav className="rounded-full w-fit h-fit text-white absolute top-10 left-[300px] md:top-0 md:left-[1200px] z-20">
+      <div className="flex justify-between items-center p-4 ">
         <button
           onClick={toggleMenu}
-          className="focus:outline-none menu-button"
+          className="focus:outline-none menu-button md:w-10 md:h-10 w-6 h-6"
           aria-expanded={isOpen}
           aria-label="Toggle menu"
         >
           <svg
-            className="w-6 h-6"
+            className="w-6 h-6 md:w-10 md:h-10"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

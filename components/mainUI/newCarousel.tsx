@@ -1,28 +1,17 @@
 'use client';
 import React, { useState } from 'react';
-import Image from 'next/image'; // Import the Image component from Next.js
+import Image from 'next/image';
 
 const NewCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const carouselImages = [
-    "/images/1.png",
-    "/images/3.png",
-    "/images/4.png",
-    "/images/5.png",
-    "/images/6.png",
-    "/images/7.png",
-    "/images/8.png",
-    "/images/10.png",
-    "/images/11.png",
-    "/images/12.png",
-    "/images/13.png",
-    "/images/IMG_2378.png",
-    "/images/IMG_5873.jpg",
-    "/images/IMG_8598.jpg",
-    "/images/IMG_8711.jpg",
-    "/images/IMG_8718.jpg",
-    "/images/IMG_9997.jpg",
+    "/images/carousel/5.png",
+    "/images/carousel/10.png",
+    "/images/carousel/IMG_5873.jpg",
+    "/images/carousel/IMG_8598.jpg",
+    "/images/carousel/IMG_8718.jpg",
+    "/images/carousel/IMG_9997.jpg",
   ];
 
   const handleLeftClick = () => {
@@ -34,7 +23,7 @@ const NewCarousel = () => {
   };
 
   return (
-    <div id="gallery" className="flex items-center justify-center w-full h-60 md:h-[500px] bg-black">
+    <div id="gallery" className="flex items-center justify-center w-full h-[600px] md:h-[500px] bg-black">
       {/* Container with perspective to enable 3D effects */}
       <div className="relative w-full max-w-[800px]" style={{ perspective: '1000px' }}>
         {/* Inner container with 3D transform based on current index */}
@@ -64,21 +53,20 @@ const NewCarousel = () => {
             </div>
           ))}
         </div>
-        {/* Navigation buttons positioned at the bottom */}
-        <div className="absolute bottom-5 w-full flex justify-between px-10">
+        <div className="absolute bottom-0 top-[150px] w-full flex justify-between">
           {/* Left navigation button */}
           <button
-            className="bg-yellow-500 rounded-full w-8 h-8 flex items-center justify-center"
+            className="bg-yellow-500 rounded-full w-20 h-20 flex items-center justify-center"
             onClick={handleLeftClick}
           >
-            &#8592;
+            <div className='text-6xl'>&#8592;</div>
           </button>
           {/* Right navigation button */}
           <button
-            className="bg-yellow-500 rounded-full w-8 h-8 flex items-center justify-center"
+            className="bg-yellow-500 rounded-full w-20 h-20 flex items-center justify-center"
             onClick={handleRightClick}
           >
-            &#8594;
+            <div className='text-6xl'>&#8594;</div>
           </button>
         </div>
       </div>
